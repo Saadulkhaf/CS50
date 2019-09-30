@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Provide your Information!</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <input autocomplete="off" autofocus name="phone" placeholder="Phone Number" type="tel" minlength="11" maxlength="11">
+        <select name="room">
+            <option disabled selected value="">Room No.</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <!-- TODO -->
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input').value) {
+                alert('You must provide your name/number');
+                return false;
+            }
+            else if (!document.querySelector('select').value) {
+                alert('You must provide your Room No');
+                return false;
+            }
+            return true;
+        };
+
+
+        /* TODO */
+
+    </script>
+
+{% endblock %}

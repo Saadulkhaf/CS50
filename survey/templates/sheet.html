@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h1>Tenants</h1>
+    <ul>
+        {% for row in rows %}
+            <li><b>{{ row["name"] }}</b> is at Room No. <b>{{ row["room"] }}</b> and his mobile number is <b>{{ row["phone"] }}</b></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

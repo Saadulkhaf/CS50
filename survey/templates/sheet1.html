@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2>Rigestered Tenants</h2>
+
+<table>
+  <tr>
+    <th><b>Name</b></th>
+    <th><b>Room No</b></th>
+    <th><b>Phone No</b></th>
+  </tr>
+  {% for row in rows %}
+  <tr>
+    <td><b>{{ row["name"] }}</b></td>
+    <td><b>{{ row["room"] }}</b></td>
+    <td><b>{{ row["phone"] }}</b></td>
+  </tr>
+  {% endfor %}
+{% endblock %}
